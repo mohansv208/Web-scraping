@@ -4,11 +4,22 @@
 This project aims to provide a modular web scraping solution for extracting product reviews from various SaaS review platforms, including G2 and Capterra. The goal is to enable users to collect and analyze reviews to gain insights into customer experiences and product performance.
 
 ## Different Tools for Web Scraping
-There are several tools available for web scraping, including:
-- **Beautiful Soup**: A Python library for parsing HTML and XML documents.
-- **Scrapy**: An open-source web-crawling framework for Python that provides tools for scraping and extracting data.
-- **Selenium**: A browser automation tool that can be used for web scraping dynamic content.
-- **Puppeteer**: A Node.js library for controlling headless Chrome or Chromium, ideal for scraping JavaScript-heavy websites.
+There are several tools available for web scraping, some of the node js tools are mentioned below:
+### Puppeteer vs. Other Web Scraping Tools
+
+| Feature/Tool          | **Puppeteer**                                           | **Cheerio**                             | **jQuery**                             | **Playwright**                         |
+|-----------------------|--------------------------------------------------------|-----------------------------------------|----------------------------------------|----------------------------------------|
+| **Browser Control**    | Full control over headless Chrome and Chromium        | No browser control; operates on static HTML | No browser control; primarily for DOM manipulation | Full control over multiple browsers (Chromium, Firefox, WebKit) |
+| **Dynamic Content**    | Excellent handling of JavaScript-rendered content     | Limited; requires static HTML           | Limited; primarily for DOM manipulation | Excellent handling of JavaScript-rendered content |
+| **Ease of Use**        | Easy to set up with a clear API                       | Simple to use for parsing HTML, but limited for scraping | Familiar to front-end developers, but not designed for scraping | Similar to Puppeteer, but with more features and cross-browser support |
+| **Performance**        | Fast, but can be resource-intensive due to running a full browser | Fast for static content; lightweight     | Fast for DOM manipulation                | Fast with multi-browser support; optimized for performance |
+| **Feature Set**        | Includes built-in features for screenshots, PDFs, and more | Focused on parsing HTML; lacks built-in browser features | Focused on DOM manipulation; not suitable for scraping | Comprehensive features including auto-waiting and tracing |
+| **Use Cases**          | Ideal for scraping dynamic sites, testing, and automation | Best for scraping static content         | Best for client-side DOM manipulation   | Suitable for scraping and testing across multiple browsers |
+
+### Conclusion
+
+Puppeteer stands out for its ability to handle dynamic content effectively and provide full control over the browser environment. While tools like Cheerio and jQuery are excellent for static content and DOM manipulation, they lack the browser automation capabilities needed for modern web scraping tasks. Playwright offers similar features to Puppeteer with added cross-browser support, making it a great alternative. However, for those primarily focused on scraping JavaScript-heavy websites, Puppeteer remains a top choice.
+
 
 ## Why We Went with Puppeteer?
 We chose Puppeteer for this project due to its ability to simulate user interactions and navigate dynamic web pages. Puppeteer provides a high-level API to control headless Chrome, making it suitable for scraping modern websites that rely heavily on JavaScript for content rendering. Additionally, it allows for various functionalities such as taking screenshots and generating PDFs.
